@@ -1,0 +1,38 @@
+
+Question ID: 1
+UTCで、timestampが12:00:00から13:00:00の時間帯に渋谷駅(lat:lon = 35.658514:139.70133)から半径5kmにいる人数は？
+
+Question ID: 2
+UTCで、timestampが12:00:00から13:00:00の時間帯に品川駅(lat:lon = 35.630152:139.74044)から半径5kmにいる人数は？
+
+
+Question ID: 3
+UTCで、timestampが12:00:00から13:00:00の時間帯に上野駅(lat:lon = 35.713768:139.777254)から半径5kmにいる人数は？
+
+
+Question ID: 4
+UTCで、timestampが12:00:00から13:00:00の時間帯のiOSのDeviceIDのユニーク数は？
+
+
+Question ID: 5
+DeviceID: 1cb831e2-3c8e-4888-86de-878ae0527e1eのユーザが通ったことのある都道府県は？
+山口
+SELECT jsonPayload.latitude, jsonPayload.longitude FROM [ca-intern-201710-team02:big_query.collect_log_20171022] where jsonPayload.device_id = "1cb831e2-3c8e-4888-86de-878ae0527e1e";
+
+Question ID: 6
+DeviceID: 90eddad9-b4d9-46b1-bed7-c79f208a7244のユーザが通ったことのある都道府県は？
+静岡
+SELECT jsonPayload.latitude, jsonPayload.longitude FROM [ca-intern-201710-team02:big_query.collect_log_20171022] where jsonPayload.device_id = "90eddad9-b4d9-46b1-bed7-c79f208a7244";
+
+Question ID: 7
+DeviceID: 5624c959-6e3c-4a73-8c5d-f622292fa24aのユーザが通ったことのある都道府県は？
+兵庫県
+SELECT jsonPayload.latitude, jsonPayload.longitude FROM [ca-intern-201710-team02:big_query.collect_log_20171022] where jsonPayload.device_id = "5624c959-6e3c-4a73-8c5d-f622292fa24a";
+
+Question ID: 8
+DeviceID: 100675ab-0bfc-4ff8-8794-c858118e95ecのユーザが通ったことのある都道府県は？
+佐賀
+SELECT jsonPayload.latitude, jsonPayload.longitude FROM [ca-intern-201710-team02:big_query.collect_log_20171022] where jsonPayload.device_id = "100675ab-0bfc-4ff8-8794-c858118e95ec";
+
+
+参考文献（https://www.tree-maps.com/）

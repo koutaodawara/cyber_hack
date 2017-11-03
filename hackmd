@@ -1,0 +1,74 @@
+m-b
+---
+# タスク
+- BigTableの作成
+    - テーブルのスキーマを作成 done
+    - BigTableのインスタンスを作成 done
+
+- 集計サーバプログラムの作成
+    - BigTableとの接続 
+    - BigTableへの書込み
+        - timestamp#idfa
+        - lat
+        - lon
+        - sysname
+    - 集計のロジックを考える
+    - 集計エンドポイントの用意
+        - ip_addr/collect
+        - jsonを受け取る
+    - ログを吐く
+        - timestamp
+        - idfa
+        - lat
+        - log
+        - sysname
+        - sysver
+    - ユニットテスト
+- リアルタイム回答プログラムの作成
+    - done BigTableとの接続
+    - done BigTableへの読み込み
+    - done 回答のロジックを考える
+    - done エンドポイントの実装
+    - done ユニットテスト
+- インフラの整備
+    - GAEへのデプロイ
+    - GAEからBigTableへの接続を確認
+    - GCEへのデプロイ
+    - ロードバランサの用意
+    - StackDriverLoggingでGCEを監視
+        - BigQueryへの書き出し
+
+    - Pub/Subの用意
+    - DataFlowの用意
+- バッチ問題回答用SQLの作成
+    - 12:00~13:00の5km以内の人数
+    - 12:00~13:00ios端末の数
+    - 特定のユーザの都道府県
+
+# アピールポイント
+## BigTable
+- Row keyは timestampIDFAにした
+    - BigTableはrow keyを辞書的にソートしている
+    - バッチ問題8問の内5問が12:00 ~ 13:00という時間絞りな問題なので，timestampを先にした
+
+- 金額を計算してみる
+
+# プレゼン
+使用した技術
+1. cloud bigtable
+
+2. Big Query
+3. stackdriver logging
+
+
+アピールポイン（こだわり）
+### リアルタイム集計プログラム
+- Row keyは ”timestampIDFA”で経緯度を特定
+- BigTableはrow keyを辞書的にソートしている
+- is_latlonの値で経緯度or駅名を返す
+
+### 集計サーバープログラム
+- バッチ問題8問の内5問が12:00 ~ 13:00という時間絞りな問題なので，timestampを先にした
+- stackdriver loggingでfamilyの修正
+
+
